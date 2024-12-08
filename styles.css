@@ -1,0 +1,344 @@
+:root {
+    --primary-bg: #f4f4f4;
+    --secondary-bg: #dcdcdc;
+    --text-color: #282828;
+    --accent-color: #000;
+    --hover-color: #4a4a4a;
+    --box-shadow-light: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --box-shadow-medium: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+}
+
+body {
+    font-family: "Outfit", sans-serif;
+    background-color: var(--primary-bg);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* Header Styles */
+.header {
+    height: 60px;
+    width: 100%;
+    max-width: 584px;
+    background-color: var(--secondary-bg);
+    margin: 20px auto;
+    border-radius: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    z-index: 1000;
+    /* box-shadow: var(--box-shadow-light); */
+}
+
+.logo {
+    padding-left: 30px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.nav {
+    padding-right: 30px;
+    width: 150px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav-element {
+    text-decoration: none;
+    color: var(--accent-color);
+    cursor: pointer;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.nav-element::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: var(--accent-color);
+    transition: width 0.3s ease;
+}
+
+.nav-element:hover::after {
+    width: 100%;
+}
+
+/* Hamburger Menu */
+.nav-toggle {
+    display: none;
+}
+
+.nav-toggle-label {
+    display: none;
+    cursor: pointer;
+}
+
+/* Home Section */
+.home-section {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 1rem;
+    margin-top: -20px;
+
+}
+
+.home-content {
+    max-width: 800px;
+    width: 100%;
+}
+
+.main-intro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+#greeting {
+    font-size: 2rem;
+    color: var(--text-color);
+}
+
+#name {
+    font-size: 4rem;
+    font-weight: bold;
+    background: linear-gradient(45deg, #000, #4a4a4a);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+#skills {
+    font-size: 1.25rem;
+    color: var(--text-color);
+    opacity: 0.8;
+}
+
+/* Button Styles */
+.download-cv-btn {
+    margin-top: 1.5rem;
+    font-size: 1.125rem;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 50px;
+    background-color: var(--secondary-bg);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: var(--box-shadow-light);
+}
+
+.download-cv-btn:hover {
+    background-color: var(--accent-color);
+    color: #fff;
+    transform: translateY(-5px);
+    box-shadow: var(--box-shadow-medium);
+}
+
+
+/* Social Icons */
+.socials {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    margin-top: 1.5rem;
+}
+
+.socials a {
+    color: var(--text-color);
+}
+
+.fab {
+    font-size: 1.5rem;
+    transition: transform 0.3s ease-out;
+}
+
+.fab:hover {
+    transform: scale(1.2);
+}
+
+.fa-facebook:hover { color: #4267B2; }
+.fa-twitter:hover { color: #00acee; }
+.fa-linkedin:hover { color: #0762C8; }
+.fa-instagram:hover {
+    background: linear-gradient(-45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+/* About Section */
+.about-section {
+    padding: 4rem 0;
+    background-color: #fff;
+}
+
+.about-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    padding: 0 1rem;
+}
+
+.left-side {
+    flex: 1;
+}
+
+.right-side {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+#introduction {
+    font-family: 'Outfit', monospace;
+    text-align: justify;
+    font-size: 1.125rem;
+    line-height: 1.7;
+    margin-top: 1rem;
+}
+
+.about-tag {
+    font-size: 2rem;
+    color: var(--accent-color);
+    opacity: 0.6;
+}
+
+.right-side img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Mobile Responsive Design */
+@media screen and (max-width: 768px) {
+    /* Header Styles */
+    .header {
+        width: 90%;
+        padding: 0.5rem 1rem;
+    }
+
+    .logo {
+        padding-left: 10px;
+    }
+
+    /* Navigation */
+    .nav {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: var(--secondary-bg);
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px 0;
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 20px;
+        /* box-shadow: var(--box-shadow-light); */
+    }
+
+    .nav-element {
+        margin: 10px 0;
+        padding: 10px;
+    }
+
+    /* Hamburger Menu */
+    .nav-toggle-label {
+        display: flex;
+        align-items: center;
+        position: absolute;
+        right: 15px;
+        height: 100%;
+        padding-right: 10px;
+    }
+
+    .nav-toggle-label span,
+    .nav-toggle-label span::before,
+    .nav-toggle-label span::after {
+        display: block;
+        background: var(--accent-color);
+        height: 3.5px;
+        width: 30px;
+        border-radius: 2px;
+        position: relative;
+        transition: all 0.3s ease;
+    }
+
+    .nav-toggle-label span::before,
+    .nav-toggle-label span::after {
+        content: '';
+        position: absolute;
+    }
+
+    .nav-toggle-label span::before {
+        top: -10px;
+    }
+
+    .nav-toggle-label span::after {
+        bottom: -10px;
+    }
+
+    /* Navigation Open State */
+    .nav-open .nav {
+        display: flex;
+    }
+
+    .nav-open .nav-toggle-label span {
+        background: transparent;
+    }
+
+    .nav-open .nav-toggle-label span::before {
+        top: 0;
+        transform: rotate(45deg);
+    }
+
+    .nav-open .nav-toggle-label span::after {
+        bottom: 0;
+        transform: rotate(-45deg);
+    }
+
+    /* Typography and Layout Adjustments */
+    #name {
+        font-size: 2.5rem;
+    }
+
+    .about-container {
+        flex-direction: column;
+    }
+
+    .left-side, 
+    .right-side {
+        width: 100%;
+    }
+
+    .right-side img {
+        margin-top: 2rem;
+    }
+
+    #introduction {
+        font-size: 1rem;
+    }
+}
