@@ -10,6 +10,10 @@ window.addEventListener('scroll', () => {
     }
 });
 
+if ('scrollRestoration' in history) {
+    history.scrollRestoration = 'manual';
+}
+
 // Ensure scroll position resets to the top
 window.onload = function () {
     setTimeout(() => {
