@@ -9,3 +9,10 @@ window.addEventListener('scroll', () => {
         document.body.classList.remove('nav-open');
     }
 });
+
+// Ensure scroll position resets to the top
+window.onload = function () {
+    setTimeout(() => {
+        window.scrollTo(0, 0);
+    }, 0);
+};
